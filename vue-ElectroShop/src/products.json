@@ -1,0 +1,97 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Lenovo V15",
+      "description": "Lenovo V15 IML(2022) Intel i3-10110U 8GB 256GB 15.6' FHD TN AG IntelUHD Win10 Pro Black",
+      "price": 339,
+      "brand": "Lenovo",
+      "category": "notebook",
+      "thumbnail": "src/images/45022424-thousand.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Xiaomi 13T",
+      "description": "Smartfón, 6,67' AMOLED displej, FHD+, procesor: MediaTek Dimensity 8200 - Ultra, 8 jadrový, pamäť: 256 GB, Dual SIM, 8 GB RAM, hlavný fotoaparát: 50 Mpx.",
+      "price": 499,
+      "brand": "Xiaomi",
+      "category": "smartfón",
+      "thumbnail": "src/images/30024572-thousand.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Apple MacBook Air 13",
+      "description": "MacBook Air, 13' displej, Apple M1 čip, 8-core CPU 7-core GPU procesor, pamäť 8 GB, 256 GB SSD disk, FaceTime HD kamera, Space Gray SK (2020)",
+      "price": 969,
+      "brand": "Apple",
+      "category": "notebook",
+      "thumbnail": "src/images/45017511-thousand.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Asus Vivobook 15",
+      "description": "Asus Vivobook 15 X1504 Cool Silver, procesor: Intel Core i5-1235U, pamäť: 16GB, displej: 15,6' IPS, pevný disk: 512 GB SSD",
+      "price": 589,
+      "brand": "Asus",
+      "category": "notebook",
+      "thumbnail": "src/images/45021717-thousand.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Philips EP5441",
+      "description": "Automatický kávovar, inovatívna nádoba na mlieko LatteGo - najrýchlejšie čistenie systému napenenia mlieka. 12 kávových nápojov jedným dotykom. Advanced + User Interface - farebný TFT displej, Extra shot - silnejšia káva. 4 Užívateľské profily + host",
+      "price": 729,
+      "brand": "Philips",
+      "category": "kávovar",
+      "thumbnail": "src/images/41012231-4-threetwenty.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Samsung RB34C605CB1",
+      "description": "Kombinovaná chladnička s mrazničkou Samsung, en. trieda C, objem chladničky / mrazničky 230 / 114 l, NoFrost, All-Around Cooling, Smart ovládanie mobilom",
+      "price": 599,
+      "brand": "Samsung",
+      "category": "chladnička",
+      "thumbnail": "src/images/40047848-threetwenty.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Epson L3251 EcoTank",
+      "description": "Farebná multifunkčná atramentová tlačiareň, tankový systém na dosiahnutie nízkych nákladov na tlač, samostatné náplne, formát A4, rozlíšenie 5760 x 1440 DPI, WiFi, USB,",
+      "price": 179,
+      "brand": "Epson",
+      "category": "tlačiareň",
+      "thumbnail": "src/images/45018257-thousand.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Sencor SES 9300BK",
+      "description": "Automatický kávovar Sencor, výkon 1400 W, tlak 19 bar, 9 nastavení mletia, nádoba na vodu 1,3 l, zásobník 200 g kávy, farebný LED displej, EasyLatte, režim ECO",
+      "price": 539,
+      "brand": "Sencor",
+      "category": "kávovar",
+      "thumbnail": "src/images/45022424-thousand.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Apple iPhone 15",
+      "description": "Smartphone, 6jadrový A17 Bionic, Super Retina XDR, uhl. 6,1' OLED 2556×1179 HDR, pamäť 256 GB, predná kamera 48Mpx, zadná kamera 12+12+12Mpx, 5G, WiFi, BT, FaceID, IP68, bezdrôtové nabíjanie, iOS 17",
+      "price": 1329,
+      "brand": "Apple",
+      "category": "smartfón",
+      "thumbnail": "src/images/30024412-threetwenty.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Samsung Galaxy A34",
+      "description": "Smartphone, procesor MediaTek MT6877V/TTZA až 2,6 GHz, displej 6,6' 2340×1080 SAMOLED, RAM 8GB, úložisko 256GB, predná kamera 13MPx, zadná kamera 48+8+5MPx, 5G, WiFi 5, BT 5.2, Android 13",
+      "price": 379,
+      "brand": "Samsung",
+      "category": "smartfón",
+      "thumbnail": "src/images/30022469-threetwenty.jpg"
+    }
+  ],
+  "total": 100,
+  "skip": 0,
+  "limit": 30
+}
