@@ -1,14 +1,34 @@
 <template>
-    <div class="grid-container">
+  <div>
+    <v-text-field v-model="search" label="Vyhľadať tovar" @input="filteredItems"/>
+
+    <v-row>
+      <v-col v-for="category in categories" :key="category" class="text-center">
+        <v-btn
+          @click="filterByCategory(category)"
+          color="black"
+        >
+          {{ category }}
+        </v-btn>
+      </v-col>
+    </v-row>
+
+    <div class="grid-container" v-if="filteredItems.length">
       <div
-        v-for="product in store.products"
+        v-for="product in filteredItems"
         :key="product.id"
         @click="ProductPage(product.id)"
       >
         <ProductItem
           :productData="product"  
         />
+      </div>
     </div>
+    <div v-else>
+      <br>
+      Žiadne položky nevyhovujú vyhľadávaniu.
+    </div>
+  
   </div>
 </template>
 
@@ -25,7 +45,17 @@ export default {
     return {
       store: productsStore(),
       search: '',
+      selectedCategory: '',
+      categories: ['notebook', 'smartfón', 'kávovar', 'tlačiareň', 'chladnička'],
     };
+  },
+  computed: {
+    filteredItems() {
+      return this.store.products.filter(item => 
+        item.title.toLowerCase().includes(this.search.toLowerCase()) &&
+        (!this.selectedCategory || item.category.toLowerCase() === this.selectedCategory.toLowerCase())
+      );
+    },
   },
   methods: {
     ProductPage(id) {
@@ -33,6 +63,9 @@ export default {
     },
     async loadProducts() {
       await this.store.LoadProducts();
+    },
+    filterByCategory(category) {
+      this.selectedCategory = this.selectedCategory === category ? null : category;
     },
   },
   mounted() {

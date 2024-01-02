@@ -6,7 +6,7 @@
       color="black"
       variant="elevated"
     >
-      Zobrazit produkty
+      Zobraziť produkty
     </v-btn>
 
       <div>
@@ -52,8 +52,5 @@ export default {
       this.$router.push({ name: 'CartView' });
     },
   },
-  mounted(){
-    console.log(this.selectedProduct.thumbnail);
-  }
 };
 </script>

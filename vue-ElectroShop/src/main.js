@@ -12,7 +12,6 @@ app.use(router)
 import { createPinia } from 'pinia'
 app.use(createPinia())
 
-
 // Vuetify
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css';

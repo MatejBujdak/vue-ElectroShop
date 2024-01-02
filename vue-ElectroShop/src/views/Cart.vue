@@ -13,6 +13,7 @@
       <h3>V košiku niesu žiadne položky.</h3>
     </div>
     <div class="cart-items" v-else>   
+      <hr>
       <div
         class="cart-item"
         v-for="item in store.cart"
@@ -24,11 +25,20 @@
           <span>Kategória: {{ item.category }}</span> 
           <span>Cena: ${{ item.price }}</span>
           <span>Počet kusov: {{ item.quantity }}</span>
-          <button @click="increase(item)">+</button>
-          <button @click="decrease(item)">-</button>
-          <button @click="removeFromCart(item.id)">Odstrániť</button>
+          <button @click="increase(item)"  style="color: blue;">+</button>
+          <button @click="decrease(item)"  style="color: blue;">-</button>
+          <button @click="removeFromCart(item.id)"  style="color: red;">Odstrániť</button>
         </div>
+        <hr>
       </div>
+      <br>
+      <v-btn
+      class="BackToCatalog"
+      color="blue"
+      variant="elevated"
+    >
+      Objednať
+    </v-btn>
     </div>
   </div>
 </template>
