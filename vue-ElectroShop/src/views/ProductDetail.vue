@@ -2,7 +2,7 @@
   <div>
     <v-btn
       @click="goToProductList"
-      class="BackToCatalog"
+      class="BackToProductList"
       color="black"
       variant="elevated"
     >

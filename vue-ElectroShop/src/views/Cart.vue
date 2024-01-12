@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-btn
-      @click="goToCatalog"
-      class="BackToCatalog"
+      @click="goToProductList"
+      class="BackToProductList"
       color="black"
       variant="elevated"
     >
@@ -14,6 +14,7 @@
     </div>
     <div class="cart-items" v-else>   
       <hr>
+      <!-- polozky v kosiku -->
       <div
         class="cart-item"
         v-for="item in store.cart"
@@ -23,17 +24,25 @@
           <img :src="item.thumbnail" alt="">
           <span>Značka: {{ item.brand }}</span>
           <span>Kategória: {{ item.category }}</span> 
-          <span>Cena: ${{ item.price }}</span>
+          <span>Cena: {{ item.quantity * item.price }} €</span>
           <span>Počet kusov: {{ item.quantity }}</span>
-          <button @click="increase(item)"  style="color: blue;">+</button>
-          <button @click="decrease(item)"  style="color: blue;">-</button>
+          <div>
+            <button @click="increase(item)" class="quantity">+</button>
+            <button @click="decrease(item)" class="quantity">-</button>
+          </div>
           <button @click="removeFromCart(item.id)"  style="color: red;">Odstrániť</button>
         </div>
         <hr>
       </div>
+
+      <!-- celkova suma -->
+      <div class="total">
+        <h4>Celková suma košíku: {{ totalSum }} €</h4>
+      </div>
       <br>
       <v-btn
-      class="BackToCatalog"
+      class="BackToProductList"
+      @click="goToForm"
       color="blue"
       variant="elevated"
     >
@@ -47,14 +56,23 @@
 import { productsStore } from "@/stores/products";
 
 export default {
-  name: 'CartView',
   data() {
     return {
       store: productsStore(),
     };
   },  
+  computed: {
+    totalSum() {
+      return this.store.cart.reduce((total, item) => {
+        return total + item.price * item.quantity;
+      }, 0); 
+    },
+    ProductSum(item) {
+        return item.price * item.quantity;
+    },
+  },
   methods: {
-    goToCatalog() {
+    goToProductList() {
       this.$router.push({ name: 'ProductList' });
     },
     removeFromCart(id) {
@@ -65,6 +83,9 @@ export default {
     },
     decrease(item){
       this.store.decrease(item);
+    },
+    goToForm(){
+      this.$router.push({ name: 'form' });
     }
   },
 };

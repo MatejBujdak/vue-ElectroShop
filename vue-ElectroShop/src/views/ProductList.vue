@@ -37,7 +37,6 @@ import { productsStore } from "@/stores/products";
 import ProductItem from "@/components/ProductItem.vue";
 
 export default {
-  name: 'CatalogView',
   components: {
     ProductItem,
   },

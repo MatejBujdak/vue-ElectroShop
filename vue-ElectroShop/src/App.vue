@@ -1,6 +1,6 @@
 <template>
   <header>
-    <v-toolbar class="text-center" title="ElectroShop" color="teal">
+    <v-toolbar class="text-center" title="ElectroShop" color="#333">
       <v-btn
           @click="router.push({ name: 'CartView' })"
           variant="elevated"
@@ -13,6 +13,17 @@
   <main>
     <RouterView />
   </main>
+  <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+            <v-btn
+             class="footer_button"
+              @click="router.push({ name: 'ContactUs' })"
+              >
+              Contact us
+            </v-btn>
+        </div>
+   </footer>
 </template>
 
 <script>

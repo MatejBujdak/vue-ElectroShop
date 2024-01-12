@@ -36,7 +36,6 @@
   import { useRoute } from 'vue-router';
 
   export default {
-    name: 'ProductItem',
     data() {
       return {
         store: productsStore(),
