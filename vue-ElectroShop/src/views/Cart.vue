@@ -37,7 +37,7 @@
 
       <!-- celkova suma -->
       <div class="total">
-        <h4>Celková suma košíku: {{ totalSum }} €</h4>
+        <h4>Celková suma košíku: {{ store.totalCartSum }} €</h4>
       </div>
       <br>
       <v-btn
@@ -62,11 +62,6 @@ export default {
     };
   },  
   computed: {
-    totalSum() {
-      return this.store.cart.reduce((total, item) => {
-        return total + item.price * item.quantity;
-      }, 0); 
-    },
     ProductSum(item) {
         return item.price * item.quantity;
     },

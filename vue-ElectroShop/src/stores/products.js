@@ -7,6 +7,14 @@ export const productsStore = defineStore('products', {
     cart: []
   }),
 
+  getters: {
+    totalCartSum() {
+      return this.cart.reduce((total, item) => {
+        return total + item.price * item.quantity;
+      }, 0);
+    }
+  },
+
   actions: {
     LoadProducts() {
       this.products = productData.products;

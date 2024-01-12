@@ -1,12 +1,12 @@
 <template>
   <div>
-    <v-text-field v-model="search" label="Vyhľadať tovar" @input="filteredItems"/>
+    <v-text-field v-model="search" label="Vyhľadať tovar" @input="updateFilteredItems"/>
 
     <v-row>
       <v-col v-for="category in categories" :key="category" class="text-center">
         <v-btn
           @click="filterByCategory(category)"
-          color="black"
+          color="#333"
         >
           {{ category }}
         </v-btn>
@@ -23,10 +23,6 @@
           :productData="product"  
         />
       </div>
-    </div>
-    <div v-else>
-      <br>
-      Žiadne položky nevyhovujú vyhľadávaniu.
     </div>
   
   </div>
@@ -59,6 +55,9 @@ export default {
   methods: {
     ProductPage(id) {
       this.$router.push({ name: 'ProductDetail', params: { id } });
+    },
+    updateFilteredItems() {
+      this.filteredItems;
     },
     async loadProducts() {
       await this.store.LoadProducts();

@@ -1,33 +1,35 @@
 <template>
-    <v-card
-      class="product"
-    >
-      <v-img
-          :src="productData.thumbnail"
-          width="270px"
-          cover
-      />
+  <v-card
+    class="product"
+  >
 
-          <div class="product-card-title">
-          {{ productData.title }}
-        </div>
+    <v-img
+      :src="productData.thumbnail"
+      width="270px"
+      cover
+    />
 
-        <div class="product-card-subtitle">
-          {{ productData.price }} €
-        </div>
+    <div class="product-card-title">
+      {{ productData.title }}
+    </div>
 
-        <div class="product-card-text">
-          {{ productData.description }}
-        </div>
+    <div class="product-card-subtitle">
+      {{ productData.price }} €
+    </div>
 
-        <div class="product-card-actions">
-          <v-btn
-          @click.stop="addToCart"
-          >
-            Pridať do košíka
-          </v-btn>
-        </div>
-    </v-card>
+    <div class="product-card-text">
+      {{ productData.description }}
+    </div>
+
+    <div class="product-card-actions">
+      <v-btn
+      @click.stop="addToCart"
+      color="#333"
+      >
+      Pridať do košíka
+      </v-btn>
+    </div>
+  </v-card>
 </template> 
 
 <script>
