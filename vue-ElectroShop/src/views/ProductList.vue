@@ -1,18 +1,40 @@
 <template>
   <div>
     <v-text-field v-model="search" label="Vyhľadať tovar" @input="updateFilteredItems"/>
-
     <v-row>
       <v-col v-for="category in categories" :key="category" class="text-center">
         <v-btn
           @click="filterByCategory(category)"
-          color="#333"
+          color="black"
         >
           {{ category }}
         </v-btn>
       </v-col>
     </v-row>
 
+    <br>
+
+    <h1>Produkty:</h1>
+
+    <!-- SORT -->
+    <div v-if="priceSortDirection !== ''">
+      <v-btn
+        @click="sortProductsByPrice"
+        color="blue"
+      >
+        <v-icon>{{ priceSortDirection === 'asc' ? 'mdi-menu-up' : 'mdi-menu-down' }}</v-icon>
+        Zoradiť podľa ceny
+      </v-btn>
+    </div >
+    <div v-else>
+      <v-btn
+        @click="sortProductsByPrice"
+        color="blue"
+      >
+        Zoradiť podľa ceny
+      </v-btn>
+    </div>
+    
     <div class="grid-container" v-if="filteredItems.length">
       <div
         v-for="product in filteredItems"
@@ -23,6 +45,10 @@
           :productData="product"  
         />
       </div>
+    </div>
+    <div v-else>
+      <br>
+      <h3>Žiadne položky nevyhovujú vyhľadávaniu.</h3>
     </div>
   
   </div>
@@ -42,6 +68,7 @@ export default {
       search: '',
       selectedCategory: '',
       categories: ['notebook', 'smartfón', 'kávovar', 'tlačiareň', 'chladnička'],
+      priceSortDirection: '', 
     };
   },
   computed: {
@@ -64,6 +91,20 @@ export default {
     },
     filterByCategory(category) {
       this.selectedCategory = this.selectedCategory === category ? null : category;
+    },
+    sortProductsByPrice() {
+      this.priceSortDirection = (this.priceSortDirection === 'asc' || this.priceSortDirection === '') ? 'desc' : 'asc';
+
+      this.store.products.sort((a, b) => {
+        const priceA = a.price;
+        const priceB = b.price;
+
+        if (this.priceSortDirection === 'asc') {
+          return priceA - priceB;
+        } else {
+          return priceB - priceA;
+        }
+      });
     },
   },
   mounted() {

@@ -176,6 +176,7 @@ footer {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .footer_button:hover {
@@ -195,4 +196,9 @@ footer {
   font-weight: bold;
   font-size: 1.3em; /* Nastav veľkosť textu podľa potreby */
   margin-right: 10px;
+}
+
+.contact-section {
+    display: flex;
+    align-items: center;
 }

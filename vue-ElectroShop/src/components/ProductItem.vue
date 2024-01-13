@@ -24,8 +24,9 @@
     <div class="product-card-actions">
       <v-btn
       @click.stop="addToCart"
-      color="#333"
+      color="#B00"
       >
+      <v-icon>mdi-cart</v-icon>
       Pridať do košíka
       </v-btn>
     </div>

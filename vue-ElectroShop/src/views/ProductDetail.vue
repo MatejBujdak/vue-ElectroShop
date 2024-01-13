@@ -16,13 +16,15 @@
         <p>Popis: {{ selectedProduct.description }}</p>
         <br>
         <h2>Cena: {{ selectedProduct.price }} € </h2>
-        <v-btn
-          variant="outlined"
-          color="red"
-          @click="addToCart"
-        >
-         Pridať do košíka
-        </v-btn>
+        <div class="product-card-actions">
+          <v-btn
+          @click.stop="addToCart"
+          color="#B00"
+          >
+          <v-icon>mdi-cart</v-icon>
+          Pridať do košíka
+          </v-btn>
+        </div>
     </div>
 </template>
 
