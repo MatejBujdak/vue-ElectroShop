@@ -46,7 +46,7 @@
       };
     },
     props: {
-      productData: {  //productData obsahuje data z productu z json pr. id, brand, price...
+      productData: { 
         type: Object,
         required: true,
       }
