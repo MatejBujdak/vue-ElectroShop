@@ -69,28 +69,26 @@ export default {
       selectedCategory: '',
       categories: ['notebook', 'smartfón', 'kávovar', 'tlačiareň', 'chladnička'],
       priceSortDirection: '', 
+      filteredItems: [],
     };
-  },
-  computed: {
-    filteredItems() {
-      return this.store.products.filter(item => 
-        item.title.toLowerCase().includes(this.search.toLowerCase()) &&
-        (!this.selectedCategory || item.category.toLowerCase() === this.selectedCategory.toLowerCase())
-      );
-    },
   },
   methods: {
     ProductPage(id) {
       this.$router.push({ name: 'ProductDetail', params: { id } });
     },
     updateFilteredItems() {
-      this.filteredItems;
+      this.filteredItems = this.store.products.filter(item =>
+        item.title.toLowerCase().includes(this.search.toLowerCase()) &&
+        (!this.selectedCategory || item.category.toLowerCase() === this.selectedCategory.toLowerCase())
+      );
     },
     async loadProducts() {
       await this.store.LoadProducts();
+      this.updateFilteredItems(); 
     },
     filterByCategory(category) {
       this.selectedCategory = this.selectedCategory === category ? null : category;
+      this.updateFilteredItems(); 
     },
     sortProductsByPrice() {
       this.priceSortDirection = (this.priceSortDirection === 'asc' || this.priceSortDirection === '') ? 'desc' : 'asc';
@@ -105,6 +103,8 @@ export default {
           return priceB - priceA;
         }
       });
+
+      this.updateFilteredItems(); // Aktualizovať filteredItems po zoradení
     },
   },
   mounted() {
