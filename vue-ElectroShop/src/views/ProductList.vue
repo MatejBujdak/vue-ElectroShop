@@ -104,7 +104,7 @@ export default {
         }
       });
 
-      this.updateFilteredItems(); // Aktualizovať filteredItems po zoradení
+      this.updateFilteredItems();
     },
   },
   mounted() {

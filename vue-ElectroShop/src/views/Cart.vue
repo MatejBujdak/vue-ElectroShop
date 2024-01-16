@@ -14,7 +14,6 @@
     </div>
     <div class="cart-items" v-else>   
       <hr>
-      <!-- polozky v kosiku -->
       <div
         class="cart-item"
         v-for="item in store.cart"
@@ -22,10 +21,9 @@
       >
         <div class="item-details">
           <img :src="item.thumbnail" alt="">
-          <span>Značka: {{ item.brand }}</span>
-          <span>Kategória: {{ item.category }}</span> 
-          <span>Cena: {{ item.quantity * item.price }} €</span>
-          <span>Počet kusov: {{ item.quantity }}</span>
+          <p>{{ item.title }}</p>
+          <p>Cena: {{ item.quantity * item.price }} €</p>
+          <p>Počet kusov: {{ item.quantity }}</p>
           <div>
             <button @click="increase(item)" class="quantity">+</button>
             <button @click="decrease(item)" class="quantity">-</button>
