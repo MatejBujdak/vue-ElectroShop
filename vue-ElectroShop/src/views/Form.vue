@@ -67,7 +67,7 @@
         <h2>Celková suma: {{ store.totalCartSum + parseInt(shippingCost) }} €</h2>
       </div>
 
-      <button type="submit" class="sub-form"><h3>Odeslať objednávku</h3></button>
+      <button type="submit" class="sub-form"><h3>Odoslať objednávku</h3></button>
       
     </form>
   </div>

@@ -16,7 +16,7 @@
         <label for="email"><h3>E-mail:</h3></label>
         <input type="email" id="email" class="input-line" required>
   
-        <label for="message"><h3>Message:</h3></label>
+        <label for="message"><h3>Správa:</h3></label>
         <textarea id="message" name="message" class="input-line" rows="4" required></textarea>
   
        <button type="submit" class="sub-form"><h4>Odoslať správu</h4></button>

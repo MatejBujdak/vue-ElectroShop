@@ -1,12 +1,12 @@
 <template>
     <footer>
       <div class="footer-content">
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
+        <p>&copy; 2024 Matej Bujdák. Všetky práva vyhradené.</p>
         <div class="contact-section">
           <v-icon>mdi-phone</v-icon>
           <h3>+911 523 124</h3>
           <v-btn class="footer_button" @click="goToContact">
-            Contact us
+            <p><b>Kontaktujte nás</b></p>
           </v-btn>
         </div>
       </div>
