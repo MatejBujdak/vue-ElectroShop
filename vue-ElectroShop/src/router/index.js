@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ProductList from "@/views/ProductList.vue";
 import ProductDetail from "@/views/ProductDetail.vue";
-import ContactUs from "@/views/ContactUs.vue";
+import ContactUs from "@/components/ContactUs.vue";
 import Cart from "@/views/Cart.vue";
-import Form from "@/views/Form.vue";
+import Form from "@/components/Form.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
